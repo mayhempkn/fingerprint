@@ -39,6 +39,7 @@
             this.registerstudent = new System.Windows.Forms.Button();
             this.home = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.StatusBar = new System.Windows.Forms.Label();
             this.lastname = new System.Windows.Forms.Label();
             this.firstname = new System.Windows.Forms.Label();
             this.verify = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             this.year = new System.Windows.Forms.Label();
             this.course = new System.Windows.Forms.Label();
             this.regno = new System.Windows.Forms.Label();
-            this.StatusBar = new System.Windows.Forms.Label();
+            this.Exit_btn_Click = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(364, 22);
+            this.label1.Location = new System.Drawing.Point(475, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 18);
             this.label1.TabIndex = 0;
@@ -131,7 +132,7 @@
             this.panel1.Controls.Add(this.validatestudent);
             this.panel1.Controls.Add(this.registerstudent);
             this.panel1.Controls.Add(this.home);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(181, 524);
             this.panel1.TabIndex = 12;
@@ -188,19 +189,28 @@
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(199, 43);
+            this.groupBox2.Location = new System.Drawing.Point(199, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(644, 487);
+            this.groupBox2.Size = new System.Drawing.Size(685, 498);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Validation";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // StatusBar
+            // 
+            this.StatusBar.Location = new System.Drawing.Point(10, 427);
+            this.StatusBar.Name = "StatusBar";
+            this.StatusBar.Size = new System.Drawing.Size(179, 38);
+            this.StatusBar.TabIndex = 30;
+            this.StatusBar.Visible = false;
+            this.StatusBar.Click += new System.EventHandler(this.StatusBar_Click);
+            // 
             // lastname
             // 
             this.lastname.AutoSize = true;
             this.lastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lastname.Location = new System.Drawing.Point(470, 251);
+            this.lastname.Location = new System.Drawing.Point(482, 251);
             this.lastname.Name = "lastname";
             this.lastname.Size = new System.Drawing.Size(73, 16);
             this.lastname.TabIndex = 28;
@@ -211,7 +221,7 @@
             // 
             this.firstname.AutoSize = true;
             this.firstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.firstname.Location = new System.Drawing.Point(470, 201);
+            this.firstname.Location = new System.Drawing.Point(482, 201);
             this.firstname.Name = "firstname";
             this.firstname.Size = new System.Drawing.Size(73, 16);
             this.firstname.TabIndex = 27;
@@ -222,7 +232,7 @@
             // 
             this.verify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.verify.Location = new System.Drawing.Point(244, 402);
+            this.verify.Location = new System.Drawing.Point(259, 418);
             this.verify.Name = "verify";
             this.verify.Size = new System.Drawing.Size(85, 35);
             this.verify.TabIndex = 26;
@@ -263,9 +273,9 @@
             // 
             // studentphoto
             // 
-            this.studentphoto.Location = new System.Drawing.Point(259, 234);
+            this.studentphoto.Location = new System.Drawing.Point(238, 223);
             this.studentphoto.Name = "studentphoto";
-            this.studentphoto.Size = new System.Drawing.Size(130, 100);
+            this.studentphoto.Size = new System.Drawing.Size(154, 148);
             this.studentphoto.TabIndex = 21;
             this.studentphoto.TabStop = false;
             this.studentphoto.Click += new System.EventHandler(this.studentphoto_Click);
@@ -274,7 +284,7 @@
             // 
             this.year.AutoSize = true;
             this.year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.year.Location = new System.Drawing.Point(496, 355);
+            this.year.Location = new System.Drawing.Point(502, 355);
             this.year.Name = "year";
             this.year.Size = new System.Drawing.Size(37, 16);
             this.year.TabIndex = 14;
@@ -285,7 +295,7 @@
             // 
             this.course.AutoSize = true;
             this.course.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.course.Location = new System.Drawing.Point(482, 299);
+            this.course.Location = new System.Drawing.Point(496, 304);
             this.course.Name = "course";
             this.course.Size = new System.Drawing.Size(51, 16);
             this.course.TabIndex = 13;
@@ -296,28 +306,32 @@
             // 
             this.regno.AutoSize = true;
             this.regno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.regno.Location = new System.Drawing.Point(445, 153);
+            this.regno.Location = new System.Drawing.Point(459, 158);
             this.regno.Name = "regno";
             this.regno.Size = new System.Drawing.Size(131, 16);
             this.regno.TabIndex = 11;
             this.regno.Text = "Registration Number";
             this.regno.Click += new System.EventHandler(this.regno_Click);
             // 
-            // StatusBar
+            // Exit_btn_Click
             // 
-            this.StatusBar.Location = new System.Drawing.Point(10, 427);
-            this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(179, 38);
-            this.StatusBar.TabIndex = 30;
-            this.StatusBar.Visible = false;
-            this.StatusBar.Click += new System.EventHandler(this.StatusBar_Click);
+            this.Exit_btn_Click.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Exit_btn_Click.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Exit_btn_Click.Location = new System.Drawing.Point(809, 12);
+            this.Exit_btn_Click.Name = "Exit_btn_Click";
+            this.Exit_btn_Click.Size = new System.Drawing.Size(75, 23);
+            this.Exit_btn_Click.TabIndex = 14;
+            this.Exit_btn_Click.Text = "Exit";
+            this.Exit_btn_Click.UseVisualStyleBackColor = true;
+            this.Exit_btn_Click.Click += new System.EventHandler(this.Exit_btn_Click_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(864, 542);
+            this.ClientSize = new System.Drawing.Size(896, 588);
+            this.Controls.Add(this.Exit_btn_Click);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -360,5 +374,6 @@
         private System.Windows.Forms.Label firstname;
         private System.Windows.Forms.Label lastname;
         private System.Windows.Forms.Label StatusBar;
+        private System.Windows.Forms.Button Exit_btn_Click;
     }
 }

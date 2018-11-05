@@ -161,7 +161,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(188, 66);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(756, 524);
+            this.groupBox2.Size = new System.Drawing.Size(756, 559);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Student Details";
@@ -169,7 +169,7 @@
             // 
             // StatusBar
             // 
-            this.StatusBar.Location = new System.Drawing.Point(6, 483);
+            this.StatusBar.Location = new System.Drawing.Point(20, 504);
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(179, 38);
             this.StatusBar.TabIndex = 29;
@@ -214,7 +214,7 @@
             // 
             this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.submit.Location = new System.Drawing.Point(598, 446);
+            this.submit.Location = new System.Drawing.Point(618, 480);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(85, 35);
             this.submit.TabIndex = 25;
@@ -226,7 +226,7 @@
             // 
             this.takephoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.takephoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.takephoto.Location = new System.Drawing.Point(403, 446);
+            this.takephoto.Location = new System.Drawing.Point(403, 460);
             this.takephoto.Name = "takephoto";
             this.takephoto.Size = new System.Drawing.Size(94, 31);
             this.takephoto.TabIndex = 24;
@@ -238,7 +238,7 @@
             // 
             this.capture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.capture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.capture.Location = new System.Drawing.Point(532, 203);
+            this.capture.Location = new System.Drawing.Point(566, 203);
             this.capture.Name = "capture";
             this.capture.Size = new System.Drawing.Size(85, 35);
             this.capture.TabIndex = 23;
@@ -248,7 +248,7 @@
             // 
             // fingerprint
             // 
-            this.fingerprint.Location = new System.Drawing.Point(490, 244);
+            this.fingerprint.Location = new System.Drawing.Point(523, 247);
             this.fingerprint.Name = "fingerprint";
             this.fingerprint.Size = new System.Drawing.Size(180, 148);
             this.fingerprint.TabIndex = 22;
@@ -259,7 +259,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label8.Location = new System.Drawing.Point(529, 174);
+            this.label8.Location = new System.Drawing.Point(563, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 16);
             this.label8.TabIndex = 21;
@@ -267,9 +267,9 @@
             // 
             // studentphoto
             // 
-            this.studentphoto.Location = new System.Drawing.Point(244, 415);
+            this.studentphoto.Location = new System.Drawing.Point(228, 410);
             this.studentphoto.Name = "studentphoto";
-            this.studentphoto.Size = new System.Drawing.Size(130, 100);
+            this.studentphoto.Size = new System.Drawing.Size(158, 132);
             this.studentphoto.TabIndex = 20;
             this.studentphoto.TabStop = false;
             this.studentphoto.Click += new System.EventHandler(this.studentphoto_Click);
@@ -366,10 +366,11 @@
             this.panel1.Controls.Add(this.validatestudent);
             this.panel1.Controls.Add(this.registerstudent);
             this.panel1.Controls.Add(this.home);
-            this.panel1.Location = new System.Drawing.Point(1, 43);
+            this.panel1.Location = new System.Drawing.Point(1, 101);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(181, 524);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // validatestudent
             // 
@@ -424,7 +425,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(949, 598);
+            this.ClientSize = new System.Drawing.Size(949, 637);
             this.Controls.Add(this.Exit_btn_Click);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);

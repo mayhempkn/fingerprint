@@ -37,17 +37,23 @@ namespace project
 
         private void registerstudent_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form2 targetform = new Form2();
+            targetform.Show();
         }
 
         private void validatestudent_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form3 targetform = new Form3();
+            targetform.Show();
         }
 
         private void home_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form1 targetform = new Form1();
+            targetform.Show();
         }
 
         private void opendevice_Click(object sender, EventArgs e)
@@ -62,10 +68,10 @@ namespace project
 
             // Get Selected device by User
             string selected_device = DeviceIDCombo.Text;
-            selected_device = selected_device.Substring(0, 6);
-            Int16 device_id = Convert.ToInt16(selected_device.Substring(0, 6), 16);
+            // selected_device = selected_device.Substring(0, 6);
+            //  Int16 device_id = Convert.ToInt16(selected_device.Substring(0, 6), 16);
 
-            m_SecuBSP.DeviceID = device_id;
+            //  m_SecuBSP.DeviceID = device_id;
 
             err = m_SecuBSP.OpenDevice();
             DisplaySecuBSPErrMsg("OpenDevice", err);
@@ -139,6 +145,7 @@ namespace project
             enumerate_Click(sender, e);
 
 
+
         }
 
 
@@ -199,6 +206,12 @@ namespace project
 
         private void StatusBar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Exit_btn_Click_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
 
         }
     }
