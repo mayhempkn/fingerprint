@@ -70,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(412, 28);
+            this.label1.Location = new System.Drawing.Point(488, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 24);
             this.label1.TabIndex = 0;
@@ -96,7 +96,7 @@
             this.opendevice.Location = new System.Drawing.Point(335, 41);
             this.opendevice.Name = "opendevice";
             this.opendevice.Size = new System.Drawing.Size(84, 26);
-            this.opendevice.TabIndex = 2;
+            this.opendevice.TabIndex = 1;
             this.opendevice.Text = "Open Device";
             this.opendevice.UseVisualStyleBackColor = true;
             this.opendevice.Click += new System.EventHandler(this.button2_Click);
@@ -117,7 +117,7 @@
             this.DeviceIDCombo.Location = new System.Drawing.Point(168, 41);
             this.DeviceIDCombo.Name = "DeviceIDCombo";
             this.DeviceIDCombo.Size = new System.Drawing.Size(121, 24);
-            this.DeviceIDCombo.TabIndex = 4;
+            this.DeviceIDCombo.TabIndex = 0;
             this.DeviceIDCombo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox1
@@ -130,7 +130,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(111, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(620, 86);
+            this.groupBox1.Size = new System.Drawing.Size(633, 86);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Initialization";
@@ -159,9 +159,9 @@
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(188, 66);
+            this.groupBox2.Location = new System.Drawing.Point(226, 95);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(756, 559);
+            this.groupBox2.Size = new System.Drawing.Size(784, 588);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Student Details";
@@ -169,11 +169,10 @@
             // 
             // StatusBar
             // 
-            this.StatusBar.Location = new System.Drawing.Point(20, 504);
+            this.StatusBar.Location = new System.Drawing.Point(565, 377);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(179, 38);
+            this.StatusBar.Size = new System.Drawing.Size(189, 38);
             this.StatusBar.TabIndex = 29;
-            this.StatusBar.Visible = false;
             this.StatusBar.Click += new System.EventHandler(this.StatusBar_Click);
             // 
             // lastname
@@ -185,7 +184,7 @@
             this.lastname.Location = new System.Drawing.Point(244, 277);
             this.lastname.Name = "lastname";
             this.lastname.Size = new System.Drawing.Size(228, 25);
-            this.lastname.TabIndex = 28;
+            this.lastname.TabIndex = 4;
             this.lastname.TextChanged += new System.EventHandler(this.lastname_TextChanged);
             // 
             // firstname
@@ -197,7 +196,7 @@
             this.firstname.Location = new System.Drawing.Point(244, 220);
             this.firstname.Name = "firstname";
             this.firstname.Size = new System.Drawing.Size(228, 25);
-            this.firstname.TabIndex = 27;
+            this.firstname.TabIndex = 3;
             this.firstname.TextChanged += new System.EventHandler(this.firstname_TextChanged);
             // 
             // label9
@@ -214,10 +213,10 @@
             // 
             this.submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.submit.Location = new System.Drawing.Point(618, 480);
+            this.submit.Location = new System.Drawing.Point(628, 534);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(85, 35);
-            this.submit.TabIndex = 25;
+            this.submit.TabIndex = 9;
             this.submit.Text = "Submit";
             this.submit.UseVisualStyleBackColor = true;
             this.submit.Click += new System.EventHandler(this.submit_Click);
@@ -226,10 +225,10 @@
             // 
             this.takephoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.takephoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.takephoto.Location = new System.Drawing.Point(403, 460);
+            this.takephoto.Location = new System.Drawing.Point(416, 482);
             this.takephoto.Name = "takephoto";
             this.takephoto.Size = new System.Drawing.Size(94, 31);
-            this.takephoto.TabIndex = 24;
+            this.takephoto.TabIndex = 7;
             this.takephoto.Text = "Take Photo";
             this.takephoto.UseVisualStyleBackColor = true;
             this.takephoto.Click += new System.EventHandler(this.takephoto_Click);
@@ -238,19 +237,19 @@
             // 
             this.capture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.capture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.capture.Location = new System.Drawing.Point(566, 203);
+            this.capture.Location = new System.Drawing.Point(619, 201);
             this.capture.Name = "capture";
             this.capture.Size = new System.Drawing.Size(85, 35);
-            this.capture.TabIndex = 23;
+            this.capture.TabIndex = 8;
             this.capture.Text = "Capture";
             this.capture.UseVisualStyleBackColor = true;
             this.capture.Click += new System.EventHandler(this.button3_Click);
             // 
             // fingerprint
             // 
-            this.fingerprint.Location = new System.Drawing.Point(523, 247);
+            this.fingerprint.Location = new System.Drawing.Point(585, 258);
             this.fingerprint.Name = "fingerprint";
-            this.fingerprint.Size = new System.Drawing.Size(180, 148);
+            this.fingerprint.Size = new System.Drawing.Size(142, 116);
             this.fingerprint.TabIndex = 22;
             this.fingerprint.TabStop = false;
             this.fingerprint.Click += new System.EventHandler(this.fingerprint_Click);
@@ -259,7 +258,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label8.Location = new System.Drawing.Point(563, 165);
+            this.label8.Location = new System.Drawing.Point(616, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 16);
             this.label8.TabIndex = 21;
@@ -267,9 +266,9 @@
             // 
             // studentphoto
             // 
-            this.studentphoto.Location = new System.Drawing.Point(228, 410);
+            this.studentphoto.Location = new System.Drawing.Point(218, 427);
             this.studentphoto.Name = "studentphoto";
-            this.studentphoto.Size = new System.Drawing.Size(158, 132);
+            this.studentphoto.Size = new System.Drawing.Size(182, 142);
             this.studentphoto.TabIndex = 20;
             this.studentphoto.TabStop = false;
             this.studentphoto.Click += new System.EventHandler(this.studentphoto_Click);
@@ -283,7 +282,7 @@
             this.year.Location = new System.Drawing.Point(244, 370);
             this.year.Name = "year";
             this.year.Size = new System.Drawing.Size(228, 25);
-            this.year.TabIndex = 19;
+            this.year.TabIndex = 6;
             this.year.TextChanged += new System.EventHandler(this.year_TextChanged);
             // 
             // course
@@ -295,7 +294,7 @@
             this.course.Location = new System.Drawing.Point(244, 319);
             this.course.Name = "course";
             this.course.Size = new System.Drawing.Size(228, 25);
-            this.course.TabIndex = 17;
+            this.course.TabIndex = 5;
             this.course.TextChanged += new System.EventHandler(this.course_TextChanged);
             // 
             // regno
@@ -307,7 +306,7 @@
             this.regno.Location = new System.Drawing.Point(244, 165);
             this.regno.Name = "regno";
             this.regno.Size = new System.Drawing.Size(228, 25);
-            this.regno.TabIndex = 15;
+            this.regno.TabIndex = 2;
             this.regno.TextChanged += new System.EventHandler(this.regno_TextChanged);
             // 
             // label7
@@ -366,9 +365,9 @@
             this.panel1.Controls.Add(this.validatestudent);
             this.panel1.Controls.Add(this.registerstudent);
             this.panel1.Controls.Add(this.home);
-            this.panel1.Location = new System.Drawing.Point(1, 101);
+            this.panel1.Location = new System.Drawing.Point(39, 104);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 524);
+            this.panel1.Size = new System.Drawing.Size(181, 579);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -412,7 +411,7 @@
             // 
             this.Exit_btn_Click.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Exit_btn_Click.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Exit_btn_Click.Location = new System.Drawing.Point(853, 12);
+            this.Exit_btn_Click.Location = new System.Drawing.Point(921, 22);
             this.Exit_btn_Click.Name = "Exit_btn_Click";
             this.Exit_btn_Click.Size = new System.Drawing.Size(75, 23);
             this.Exit_btn_Click.TabIndex = 13;
@@ -425,7 +424,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(949, 637);
+            this.ClientSize = new System.Drawing.Size(1049, 695);
             this.Controls.Add(this.Exit_btn_Click);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);

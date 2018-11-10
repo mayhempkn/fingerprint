@@ -43,7 +43,7 @@
             this.lastname = new System.Windows.Forms.Label();
             this.firstname = new System.Windows.Forms.Label();
             this.verify = new System.Windows.Forms.Button();
-            this.fingerprint = new System.Windows.Forms.PictureBox();
+            this.fingerprintbox = new System.Windows.Forms.PictureBox();
             this.capture = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.studentphoto = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fingerprint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fingerprintbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentphoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,7 +179,7 @@
             this.groupBox2.Controls.Add(this.lastname);
             this.groupBox2.Controls.Add(this.firstname);
             this.groupBox2.Controls.Add(this.verify);
-            this.groupBox2.Controls.Add(this.fingerprint);
+            this.groupBox2.Controls.Add(this.fingerprintbox);
             this.groupBox2.Controls.Add(this.capture);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.studentphoto);
@@ -191,7 +191,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(199, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(685, 498);
+            this.groupBox2.Size = new System.Drawing.Size(712, 510);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Validation";
@@ -199,18 +199,17 @@
             // 
             // StatusBar
             // 
-            this.StatusBar.Location = new System.Drawing.Point(10, 427);
+            this.StatusBar.Location = new System.Drawing.Point(16, 401);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(179, 38);
+            this.StatusBar.Size = new System.Drawing.Size(200, 38);
             this.StatusBar.TabIndex = 30;
-            this.StatusBar.Visible = false;
             this.StatusBar.Click += new System.EventHandler(this.StatusBar_Click);
             // 
             // lastname
             // 
             this.lastname.AutoSize = true;
             this.lastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lastname.Location = new System.Drawing.Point(482, 251);
+            this.lastname.Location = new System.Drawing.Point(517, 251);
             this.lastname.Name = "lastname";
             this.lastname.Size = new System.Drawing.Size(73, 16);
             this.lastname.TabIndex = 28;
@@ -221,18 +220,18 @@
             // 
             this.firstname.AutoSize = true;
             this.firstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.firstname.Location = new System.Drawing.Point(482, 201);
+            this.firstname.Location = new System.Drawing.Point(517, 201);
             this.firstname.Name = "firstname";
-            this.firstname.Size = new System.Drawing.Size(73, 16);
+            this.firstname.Size = new System.Drawing.Size(67, 16);
             this.firstname.TabIndex = 27;
-            this.firstname.Text = "First Name";
+            this.firstname.Text = "Firstname";
             this.firstname.Click += new System.EventHandler(this.firstname_Click);
             // 
             // verify
             // 
             this.verify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.verify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.verify.Location = new System.Drawing.Point(259, 418);
+            this.verify.Location = new System.Drawing.Point(291, 439);
             this.verify.Name = "verify";
             this.verify.Size = new System.Drawing.Size(85, 35);
             this.verify.TabIndex = 26;
@@ -240,22 +239,22 @@
             this.verify.UseVisualStyleBackColor = true;
             this.verify.Click += new System.EventHandler(this.verify_Click);
             // 
-            // fingerprint
+            // fingerprintbox
             // 
-            this.fingerprint.Location = new System.Drawing.Point(31, 212);
-            this.fingerprint.Name = "fingerprint";
-            this.fingerprint.Size = new System.Drawing.Size(158, 148);
-            this.fingerprint.TabIndex = 25;
-            this.fingerprint.TabStop = false;
-            this.fingerprint.Click += new System.EventHandler(this.fingerprint_Click);
+            this.fingerprintbox.Location = new System.Drawing.Point(31, 212);
+            this.fingerprintbox.Name = "fingerprintbox";
+            this.fingerprintbox.Size = new System.Drawing.Size(168, 177);
+            this.fingerprintbox.TabIndex = 25;
+            this.fingerprintbox.TabStop = false;
+            this.fingerprintbox.Click += new System.EventHandler(this.fingerprint_Click);
             // 
             // capture
             // 
             this.capture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.capture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.capture.Location = new System.Drawing.Point(61, 171);
+            this.capture.Location = new System.Drawing.Point(70, 158);
             this.capture.Name = "capture";
-            this.capture.Size = new System.Drawing.Size(85, 35);
+            this.capture.Size = new System.Drawing.Size(85, 37);
             this.capture.TabIndex = 24;
             this.capture.Text = "Capture";
             this.capture.UseVisualStyleBackColor = true;
@@ -265,7 +264,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(276, 190);
+            this.label7.Location = new System.Drawing.Point(288, 168);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 16);
             this.label7.TabIndex = 22;
@@ -273,9 +272,9 @@
             // 
             // studentphoto
             // 
-            this.studentphoto.Location = new System.Drawing.Point(238, 223);
+            this.studentphoto.Location = new System.Drawing.Point(240, 205);
             this.studentphoto.Name = "studentphoto";
-            this.studentphoto.Size = new System.Drawing.Size(154, 148);
+            this.studentphoto.Size = new System.Drawing.Size(174, 184);
             this.studentphoto.TabIndex = 21;
             this.studentphoto.TabStop = false;
             this.studentphoto.Click += new System.EventHandler(this.studentphoto_Click);
@@ -284,7 +283,7 @@
             // 
             this.year.AutoSize = true;
             this.year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.year.Location = new System.Drawing.Point(502, 355);
+            this.year.Location = new System.Drawing.Point(532, 355);
             this.year.Name = "year";
             this.year.Size = new System.Drawing.Size(37, 16);
             this.year.TabIndex = 14;
@@ -295,7 +294,7 @@
             // 
             this.course.AutoSize = true;
             this.course.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.course.Location = new System.Drawing.Point(496, 304);
+            this.course.Location = new System.Drawing.Point(518, 304);
             this.course.Name = "course";
             this.course.Size = new System.Drawing.Size(51, 16);
             this.course.TabIndex = 13;
@@ -306,7 +305,7 @@
             // 
             this.regno.AutoSize = true;
             this.regno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.regno.Location = new System.Drawing.Point(459, 158);
+            this.regno.Location = new System.Drawing.Point(482, 158);
             this.regno.Name = "regno";
             this.regno.Size = new System.Drawing.Size(131, 16);
             this.regno.TabIndex = 11;
@@ -330,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(896, 588);
+            this.ClientSize = new System.Drawing.Size(923, 600);
             this.Controls.Add(this.Exit_btn_Click);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
@@ -338,12 +337,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fingerprint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fingerprintbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentphoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -370,7 +370,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button capture;
         private System.Windows.Forms.Button verify;
-        private System.Windows.Forms.PictureBox fingerprint;
+        private System.Windows.Forms.PictureBox fingerprintbox;
         private System.Windows.Forms.Label firstname;
         private System.Windows.Forms.Label lastname;
         private System.Windows.Forms.Label StatusBar;

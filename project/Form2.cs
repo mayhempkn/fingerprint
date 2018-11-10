@@ -137,31 +137,59 @@ namespace project
 
         private void submit_Click(object sender, EventArgs e)
         {
-
-            try
+            if (regno.Text == "")
             {
-                // post browsed image to database
-                string sql = string.Empty;
-                string con = string.Empty;
-                byte[] imageData = null;
-                FileStream mfilestream = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
-                BinaryReader bireader = new BinaryReader(mfilestream);
-                imageData = bireader.ReadBytes((int)mfilestream.Length);
-                bireader.Close();
-                mfilestream.Close();
+                MessageBox.Show("Please key in student Registaration number");
+            }
+            else if (firstname.Text == "")
+            {
+                MessageBox.Show("Please key in student First name");
+            }
+            else if (lastname.Text == "")
+            {
+                MessageBox.Show("Please key in student last name");
+            }
+            else if (course.Text == "")
+            {
+                MessageBox.Show("Please select student course");
+            }
+            else if (year.Text == "")
+            {
+                MessageBox.Show("Please select Student year");
+            }
+            
+            else if (fingerprint.Text == "")
+            {
+                MessageBox.Show("Please Scan fingerprint to register");
+            }
+           
 
-                // check connection and connect to the database
-                //String con = string.Empty;
-                con = "Server=127.0.0.1; port=3306; Uid=root; Database=project; Password=";
-                //string sql = string.Empty;
-                sql = @"INSERT  INTO register (regno, firstname,lastname,course, year,studentphoto, fingerprint)VALUES (@regno,@firstname,@lastname, @course,@Year, @studentphoto, @fingerprint)";
-                using (MySqlConnection sqlcon = new MySqlConnection(con))
+            else
+            {
+
+                try
                 {
-                    sqlcon.Open();
-                    using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
+                    // post browsed image to database
+                    string sql = string.Empty;
+                    string con = string.Empty;
+                    byte[] imageData = null;
+                    FileStream mfilestream = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
+                    BinaryReader bireader = new BinaryReader(mfilestream);
+                    imageData = bireader.ReadBytes((int)mfilestream.Length);
+                    bireader.Close();
+                    mfilestream.Close();
+
+                    // check connection and connect to the database
+                    //String con = string.Empty;
+                    con = "Server=127.0.0.1; port=3306; Uid=root; Database=project; Password=";
+                    //string sql = string.Empty;
+                    sql = @"INSERT  INTO register (regno, firstname,lastname,course, year,studentphoto, fingerprint)VALUES (@regno,@firstname,@lastname, @course,@Year, @studentphoto, @fingerprint)";
+                    using (MySqlConnection sqlcon = new MySqlConnection(con))
                     {
-                        if (regno.Text != "" || firstname.Text != "" || lastname.Text != "" || course.Text != "" || year.Text != "" || studentphoto.Text != "" || fingerprint.Text != "" )
+                        sqlcon.Open();
+                        using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
                         {
+
                             ////get values from users
                             com.Parameters.AddWithValue("@regno", regno.Text);
                             com.Parameters.AddWithValue("@firstname", firstname.Text);
@@ -170,7 +198,7 @@ namespace project
                             com.Parameters.AddWithValue("@studentphoto", studentphoto); // in place of image
                             com.Parameters.AddWithValue("@year", year.Text);
                             com.Parameters.AddWithValue("@fingerprint", fingerprint.Text);
-                            
+
 
                             MySqlConnection sqlcon2 = new MySqlConnection(con);
                             sqlcon2.Open();
@@ -198,27 +226,24 @@ namespace project
                             //if successful
                             MessageBox.Show("Processing Complete.....You are registered successfully!");
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("other fields apart from image and course must be filled");
+
                         }
                     }
-                }
-                //clear text boxes
-                regno.Text = " ";
-                firstname.Text = " ";
-                lastname.Text = " ";
-                course.Text = " ";
-                studentphoto.Text = " ";
-                year.Text = " ";
-                fingerprint.Text = " ";
-               
+                    //clear text boxes
+                    regno.Text = " ";
+                    firstname.Text = " ";
+                    lastname.Text = " ";
+                    course.Text = " ";
+                    studentphoto.Image = null;
+                    year.Text = " ";
+                    fingerprint.Text = " ";
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Problem Adding to database" + ex);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Problem Adding to database" + ex);
+                }
             }
         }
 

@@ -75,7 +75,7 @@
             this.securityid.Location = new System.Drawing.Point(144, 222);
             this.securityid.Name = "securityid";
             this.securityid.Size = new System.Drawing.Size(242, 25);
-            this.securityid.TabIndex = 2;
+            this.securityid.TabIndex = 0;
             this.securityid.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
@@ -94,8 +94,9 @@
             this.password.ForeColor = System.Drawing.Color.White;
             this.password.Location = new System.Drawing.Point(144, 288);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(242, 25);
-            this.password.TabIndex = 6;
+            this.password.TabIndex = 1;
             this.password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // login
@@ -105,7 +106,7 @@
             this.login.Location = new System.Drawing.Point(199, 414);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(75, 23);
-            this.login.TabIndex = 8;
+            this.login.TabIndex = 2;
             this.login.Text = "Login";
             this.login.UseVisualStyleBackColor = true;
             this.login.Click += new System.EventHandler(this.button1_Click);
@@ -117,7 +118,7 @@
             this.signup.Location = new System.Drawing.Point(363, 84);
             this.signup.Name = "signup";
             this.signup.Size = new System.Drawing.Size(75, 23);
-            this.signup.TabIndex = 9;
+            this.signup.TabIndex = 3;
             this.signup.Text = "Sign up";
             this.signup.UseVisualStyleBackColor = true;
             this.signup.Click += new System.EventHandler(this.button2_Click);

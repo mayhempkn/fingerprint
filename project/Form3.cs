@@ -17,20 +17,20 @@ namespace project
     public partial class Form3 : Form
     {
         // calling secuGen Class constructor
-        string imgLoc = " ";
+        //string imgLoc = "";
         private SecuBSPMx m_SecuBSP;
         private bool m_DeviceOpened;
 
         private string m_EnrollFIRText;
+       
+        string con = "Server=127.0.0.1 port=3306; Uid=root; Database=project; Password=";
+
+        private string m_CaptureFIRText;
+
 
         public Form3()
         {
             InitializeComponent();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
 
        
@@ -68,8 +68,8 @@ namespace project
 
             // Get Selected device by User
             string selected_device = DeviceIDCombo.Text;
-            // selected_device = selected_device.Substring(0, 6);
-            //  Int16 device_id = Convert.ToInt16(selected_device.Substring(0, 6), 16);
+            //  selected_device = selected_device.Substring(0, 6);
+             // Int16 device_id = Convert.ToInt16(selected_device.Substring(0, 6), 16);
 
             //  m_SecuBSP.DeviceID = device_id;
 
@@ -132,6 +132,7 @@ namespace project
 
             return dest_str;
         }
+
         private void Form3_Load(object sender, EventArgs e)
         {
             DeviceIDCombo.Items.Add("0x00FF (Auto Detect)");
@@ -143,8 +144,6 @@ namespace project
 
 
             enumerate_Click(sender, e);
-
-
 
         }
 
@@ -186,6 +185,113 @@ namespace project
 
         private void capture_Click(object sender, EventArgs e)
         {
+            BSPError err;
+
+            m_SecuBSP.CaptureWindowOption.WindowStyle = (int)WindowStyle.INVISIBLE;
+
+            m_SecuBSP.CaptureWindowOption.ShowFPImage = true;
+
+            m_SecuBSP.CaptureWindowOption.FingerWindow = (IntPtr)fingerprintbox.Handle;
+
+            err = m_SecuBSP.Capture(FIRPurpose.VERIFY);
+            if (err == BSPError.ERROR_NONE)
+            {
+                m_CaptureFIRText = m_SecuBSP.FIRTextData;
+                string con = String.Empty;
+                con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=project; Password=";
+                string sql = string.Empty;
+               // sql = @"SELECT * FROM register WHERE  fingerprint='"+ fingerprintbox + "' ";
+                sql = @"SELECT * FROM register  ";
+
+                using (MySqlConnection sqlcon = new MySqlConnection(con))
+                {
+                    sqlcon.Open();
+                   
+                    using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
+                    {
+                        using (MySqlDataReader auth = com.ExecuteReader())
+                        {
+                            if (m_CaptureFIRText != "")
+                                if (auth.HasRows)
+                                {
+                                while (auth.Read())
+                                {
+                                    m_EnrollFIRText = auth["fingerprint"].ToString();
+
+                                    err = m_SecuBSP.VerifyMatch(m_CaptureFIRText, m_EnrollFIRText);
+                                    
+
+                                    if (err == BSPError.ERROR_NONE)
+                                        {
+                                        if (m_SecuBSP.IsMatched)
+                                        {
+                                            StatusBar.Text = "Matched";
+
+                                               
+
+                                                display_student_details(regno,firstname,lastname,course,year,studentphoto);
+                                        }
+                                            else
+                                            {
+                                                StatusBar.Text = "Not Matched";
+                                            }
+
+                                            
+                                    }
+                                    else
+                                    {
+                                        DisplaySecuBSPErrMsg("VerifyMatch", err);
+                                    }
+                                }
+
+                                }
+                            
+                        }
+                    }
+
+                    DisplaySecuBSPErrMsg("Capture", err);
+                }
+
+            }
+        }
+        public void display_student_details(string regno, string firstname, string lastname, string course, string year, string studentphoto)
+        {
+            string con = String.Empty;
+            con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=project; Password=";
+            string sql = string.Empty;
+            // sql = @"SELECT * FROM register WHERE  fingerprint='"+ fingerprintbox + "' ";
+            sql = @"SELECT * FROM register  ";
+
+            using (MySqlConnection sqlcon = new MySqlConnection(con))
+            {
+                sqlcon.Open();
+                
+                using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
+                {
+                    using (MySqlDataReader auth = com.ExecuteReader())
+                    {
+                       
+                            if (auth.HasRows)
+                            {
+                                while (auth.Read())
+                                {
+
+                                regno = auth["regno"].ToString();
+                                firstname = auth["firstname"].ToString();
+                                lastname = auth["lastname"].ToString();
+                                course = auth["course"].ToString();
+                                year = auth["year"].ToString();
+                                studentphoto = auth["studentphoto"].ToString();
+
+                                MessageBox.Show("this is a test");
+                                }
+
+                            }
+
+                    }
+                }
+
+            }
 
         }
 
@@ -212,6 +318,11 @@ namespace project
         private void Exit_btn_Click_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
 
         }
     }
