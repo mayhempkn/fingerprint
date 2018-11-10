@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.home);
             this.panel1.Location = new System.Drawing.Point(12, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 524);
+            this.panel1.Size = new System.Drawing.Size(181, 536);
             this.panel1.TabIndex = 12;
             // 
             // validatestudent

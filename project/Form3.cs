@@ -198,6 +198,13 @@ namespace project
             {
                 m_CaptureFIRText = m_SecuBSP.FIRTextData;
                 string con = String.Empty;
+                string regno;
+                string firstname;
+                string lastname;
+                string course;
+                string year;
+                string studentphoto;
+
                 con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=project; Password=";
                 string sql = string.Empty;
                // sql = @"SELECT * FROM register WHERE  fingerprint='"+ fingerprintbox + "' ";
@@ -227,9 +234,15 @@ namespace project
                                         {
                                             StatusBar.Text = "Matched";
 
-                                               
+                                                regno = auth["regno"].ToString();
+                                                firstname = auth["firstname"].ToString();
+                                                lastname = auth["lastname"].ToString();
+                                                course = auth["course"].ToString();
+                                                year = auth["year"].ToString();
+                                                studentphoto = auth["studentphoto"].ToString();
 
-                                                display_student_details(regno,firstname,lastname,course,year,studentphoto);
+
+                                                display_student_details(regno,firstname,lastname,course,year);
                                         }
                                             else
                                             {
@@ -254,7 +267,7 @@ namespace project
 
             }
         }
-        public void display_student_details(string regno, string firstname, string lastname, string course, string year, string studentphoto)
+        public void display_student_details(string regno, string firstname, string lastname, string course, string year)
         {
             string con = String.Empty;
             con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=project; Password=";
@@ -276,14 +289,8 @@ namespace project
                                 while (auth.Read())
                                 {
 
-                                regno = auth["regno"].ToString();
-                                firstname = auth["firstname"].ToString();
-                                lastname = auth["lastname"].ToString();
-                                course = auth["course"].ToString();
-                                year = auth["year"].ToString();
-                                studentphoto = auth["studentphoto"].ToString();
-
-                                MessageBox.Show("this is a test");
+                                
+                                //MessageBox.Show("this is a test");
                                 }
 
                             }
