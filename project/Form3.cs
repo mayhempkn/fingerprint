@@ -198,12 +198,7 @@ namespace project
             {
                 m_CaptureFIRText = m_SecuBSP.FIRTextData;
                 string con = String.Empty;
-                string regno;
-                string firstname;
-                string lastname;
-                string course;
-                string year;
-                string studentphoto;
+                
 
                 con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=project; Password=";
                 string sql = string.Empty;
@@ -232,30 +227,29 @@ namespace project
                                         {
                                         if (m_SecuBSP.IsMatched)
                                         {
-                                            StatusBar.Text = "Matched";
+                                                
+                                            StatusBar.Text = "Fingerprint Matched";
 
-                                                regno = auth["regno"].ToString();
-                                                firstname = auth["firstname"].ToString();
-                                                lastname = auth["lastname"].ToString();
-                                                course = auth["course"].ToString();
-                                                year = auth["year"].ToString();
-                                                studentphoto = auth["studentphoto"].ToString();
+                                                
 
-
-                                                display_student_details(regno,firstname,lastname,course,year);
-                                        }
+                                                display_student_details();
+                                                
+                                            }
                                             else
                                             {
-                                                StatusBar.Text = "Not Matched";
+                                                
+                                                StatusBar.Text = "Fingerprint Not Matched";
+                                                
                                             }
 
                                             
-                                    }
+                                        }
                                     else
                                     {
                                         DisplaySecuBSPErrMsg("VerifyMatch", err);
                                     }
-                                }
+                                        break;
+                                    }
 
                                 }
                             
@@ -267,9 +261,10 @@ namespace project
 
             }
         }
-        public void display_student_details(string regno, string firstname, string lastname, string course, string year)
+        public void display_student_details()
         {
             string con = String.Empty;
+            
             con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=project; Password=";
             string sql = string.Empty;
             // sql = @"SELECT * FROM register WHERE  fingerprint='"+ fingerprintbox + "' ";
@@ -278,7 +273,7 @@ namespace project
             using (MySqlConnection sqlcon = new MySqlConnection(con))
             {
                 sqlcon.Open();
-                
+              
                 using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
                 {
                     using (MySqlDataReader auth = com.ExecuteReader())
@@ -288,10 +283,15 @@ namespace project
                             {
                                 while (auth.Read())
                                 {
-
-                                
-                                //MessageBox.Show("this is a test");
-                                }
+                                regno.Text = auth.GetString("regno");
+                                firstname.Text = auth.GetString("firstname");
+                                lastname.Text = auth.GetString("lastname");
+                                course.Text = auth.GetString("course");
+                                year.Text = auth.GetString("year");
+                                studentphoto.Text = auth.GetString("studentphoto").ToString();
+                                //  MessageBox.Show("this is a test");
+                                break;
+                            }
 
                             }
 
