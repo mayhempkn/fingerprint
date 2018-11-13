@@ -17,7 +17,7 @@ namespace project
     public partial class Form2 : Form
     {
         // calling secuGen Class constructor
-        string imgLoc = " ";
+        string imgLoc ;
         private SecuBSPMx m_SecuBSP;
         private bool m_DeviceOpened;
 
@@ -195,7 +195,7 @@ namespace project
                             com.Parameters.AddWithValue("@firstname", firstname.Text);
                             com.Parameters.AddWithValue("@lastname", lastname.Text);
                             com.Parameters.AddWithValue("@course", course.Text);
-                            com.Parameters.AddWithValue("@studentphoto", studentphoto); // in place of image
+                            com.Parameters.AddWithValue("@studentphoto", imgLoc);//in place of image
                             com.Parameters.AddWithValue("@year", year.Text);
                             com.Parameters.AddWithValue("@fingerprint", fingerprint.Text);
 

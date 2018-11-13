@@ -23,7 +23,7 @@ namespace project
 
         private string m_EnrollFIRText;
        
-        string con = "Server=127.0.0.1 port=3306; Uid=root; Database=project; Password=";
+        //string con = "Server=127.0.0.1 port=3306; Uid=root; Database=project; Password=";
 
         private string m_CaptureFIRText;
 
@@ -213,13 +213,12 @@ namespace project
                     {
                         using (MySqlDataReader auth = com.ExecuteReader())
                         {
-                            if (m_CaptureFIRText != "")
+                            if (!string.IsNullOrEmpty(m_CaptureFIRText))
                                 if (auth.HasRows)
                                 {
                                 while (auth.Read())
                                 {
-                                    m_EnrollFIRText = auth["fingerprint"].ToString();
-
+                                    m_EnrollFIRText = auth["fingerprint"].ToString();                                   
                                     err = m_SecuBSP.VerifyMatch(m_CaptureFIRText, m_EnrollFIRText);
                                     
 
@@ -268,7 +267,7 @@ namespace project
             con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=project; Password=";
             string sql = string.Empty;
             // sql = @"SELECT * FROM register WHERE  fingerprint='"+ fingerprintbox + "' ";
-            sql = @"SELECT * FROM register  ";
+            sql = @"SELECT * FROM register ";
 
             using (MySqlConnection sqlcon = new MySqlConnection(con))
             {
@@ -288,7 +287,7 @@ namespace project
                                 lastname.Text = auth.GetString("lastname");
                                 course.Text = auth.GetString("course");
                                 year.Text = auth.GetString("year");
-                                studentphoto.Text = auth.GetString("studentphoto").ToString();
+                                studentphoto.Load(auth.GetString("studentphoto").ToString());
                                 //  MessageBox.Show("this is a test");
                                 break;
                             }

@@ -36,21 +36,25 @@ namespace project
                 //String con = string.Empty;
                 con = "Server=127.0.0.1; port=3306; Uid=root; Database=project; Password=";
                 //string sql = string.Empty;
-                sql = @"INSERT  INTO signup (securityid, firstname,lastname,password, confirmpassword)VALUES (@securityid,@firstname,@lastname, @password, @confirmpassword)";
+                sql = @"INSERT  INTO signup (securityid, firstname,lastname,password)VALUES (@securityid,@firstname,@lastname, @password)";
                 using (MySqlConnection sqlcon = new MySqlConnection(con))
                 {
                     sqlcon.Open();
                     using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
                     {
-                        if (securityid.Text != "" || firstname.Text != "" || lastname.Text != "" || password.Text != "" || confirmpassword.Text != "")
+                        if (securityid.Text != "" && firstname.Text != "" && lastname.Text != "" && password.Text != "" )
                         {
                             ////get values from users
                             com.Parameters.AddWithValue("@securityid", securityid.Text);
                             com.Parameters.AddWithValue("@firstname", firstname.Text);
                             com.Parameters.AddWithValue("@lastname", lastname.Text);
                             com.Parameters.AddWithValue("@password", password.Text);
-                            com.Parameters.AddWithValue("@confirmpassword", confirmpassword.Text);
+                          //  com.Parameters.AddWithValue("@confirmpassword", confirmpassword.Text);
                             com.ExecuteNonQuery();
+
+                            Form1 fm = new Form1();
+                            fm.Show();
+                            this.Hide();
 
                         }
                         else
@@ -60,6 +64,7 @@ namespace project
 
 
                     }
+                   
 
                 }
                 //clear text boxes
@@ -67,7 +72,7 @@ namespace project
                 firstname.Text = " ";
                 lastname.Text = " ";
                 password.Text = " ";
-                confirmpassword.Text = " ";
+            //    confirmpassword.Text = " ";
 
 
 
